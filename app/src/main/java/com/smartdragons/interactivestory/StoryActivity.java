@@ -1,37 +1,28 @@
 package com.smartdragons.interactivestory;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class StoryActivity extends AppCompatActivity {
 
+    public static final String TAG = StoryActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_story, menu);
-        return true;
-    }
+        Intent intent = getIntent();
+        String name = intent.getStringExtra(getString(R.string.key_name));
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (name == null) {
+            name = getText(R.string.default_name).toString();
         }
 
-        return super.onOptionsItemSelected(item);
+        Log.d(TAG, name);
     }
 }
