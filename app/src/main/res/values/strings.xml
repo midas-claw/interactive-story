@@ -6,4 +6,7 @@
     <string name="title_activity_story">StoryActivity</string>
     <string name="key_name">name</string>
     <string name="default_name">friend</string>
+    <string name="main_content_description">Signals from Mars</string>
+    <string name="main_start_button">START YOUR ADVENTURE</string>
+    <string name="main_name_hint_editText">Enter your name to begin</string>
 </resources>

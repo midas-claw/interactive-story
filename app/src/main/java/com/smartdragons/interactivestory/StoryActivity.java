@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class StoryActivity extends AppCompatActivity {
 
@@ -20,7 +18,7 @@ public class StoryActivity extends AppCompatActivity {
         String name = intent.getStringExtra(getString(R.string.key_name));
 
         if (name == null) {
-            name = getText(R.string.default_name).toString();
+            name = getString(R.string.default_name);
         }
 
         Log.d(TAG, name);
